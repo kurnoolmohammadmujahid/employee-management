@@ -1,0 +1,54 @@
+{
+  "empLst": [
+    {
+      "id": 13,
+      "name": "Soundhar",
+      "age": "28",
+      "mobileNo": "8877665544",
+      "address": "Puducherry"
+    },
+    {
+      "name": "Test",
+      "age": "28",
+      "mobileNo": "9987865455",
+      "address": "Chennai",
+      "id": 16
+    },
+    {
+      "name": "Mujahid Mujju",
+      "age": "28",
+      "mobileNo": "9941975282",
+      "address": "Chennai",
+      "id": 18
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "email": "mohammadmujahidk@hcl.com",
+      "password": "Test@123"
+    },
+    {
+      "email": "soundhar@hcl.com",
+      "password": "Test@123",
+      "id": 2
+    },
+    {
+      "email": "mohammadmujahidk@hcl.com",
+      "password": "Test@1",
+      "id": 3
+    },
+    {
+      "email": "soundharajan@hcl.com",
+      "password": "Test@123",
+      "id": 4
+    }
+  ]
+}
