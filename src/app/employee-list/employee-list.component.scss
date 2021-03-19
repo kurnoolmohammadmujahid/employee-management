@@ -1,0 +1,35 @@
+.common-popup {
+    position: absolute;
+    top: 0;
+    margin-left: 33%;
+}
+
+.margin{
+    margin-bottom: 30px;
+}
+
+table { 
+    border-collapse: collapse; 
+    width: 100%; 
+} 
+
+table,td{
+    vertical-align: middle;
+}
+          
+th, td { 
+    text-align: left; 
+    padding: 8px; 
+} 
+          
+// tr:nth-child(even) { 
+//     background-color: #0288d154; 
+// }  
+
+// tr:nth-child(odd) { 
+//     background-color: #0b364d54; 
+// } 
+
+.padding-30{
+    padding: 0px 30px;
+}

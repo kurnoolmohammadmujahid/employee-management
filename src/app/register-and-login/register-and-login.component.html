@@ -1,0 +1,64 @@
+<p-toast position="top-center" key="tc"></p-toast>
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="container h-100">
+    <div class="d-flex justify-content-center h-100 main">
+        <div class="user_card card-bg">
+            <div class="d-flex justify-content-center">
+                <div class="brand_logo_container">
+                    <img src="../../assets/images/login.jpg" class="brand_logo" alt="Logo">
+                </div>
+            </div>
+            <!-- <select class="custom-select">
+                <option selected [(ngModel)]="id">select option</option>
+                <option value="1">Login</option>
+                <option value="2">Register</option>
+            </select> -->
+            <div class="d-flex justify-content-center form_container">
+                <form [formGroup]="createForm" (ngSubmit)="loginAuthentication()" autocomplete="off">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text bg" for="inputGroupSelect01">Options</label>
+                        </div>
+                        <select class="custom-select" formControlName="id" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">Login</option>
+                            <option value="2">Register</option>
+                        </select>
+                    </div>
+                    <!-- <div>
+                        <label for="exampleInputEmail1">Choose option</label>
+                        <select class="custom-select custom-select-lg mb-3" formControlName="id">
+                            <option value="1">Login</option>
+                            <option value="2">Register</option>
+                        </select>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" formControlName="password" class="form-control"
+                            id="exampleInputPassword1">
+                    </div>
+                    <!-- <button type="submit" [disabled]="!createForm.valid"
+                        [ngClass]="{'btn btn-primary btn-lg btn-block': id == '1', 'btn btn-secondary btn-lg btn-block': id == '2'}">
+                        Login
+                    </button> -->
+                    <!-- <button *ngIf="id == '2'" type="submit" [disabled]="!createForm.valid"
+                        class="btn btn-secondary btn-lg btn-block">
+                        Register
+                    </button> -->
+                    <button type="submit" [disabled]="!createForm.valid"
+                        class="btn btn-primary btn-lg btn-block">Submit</button>
+                    <!-- <button type="submit" [disabled]="!createForm.valid"
+                        class="btn btn-secondary btn-lg btn-block">Register</button> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

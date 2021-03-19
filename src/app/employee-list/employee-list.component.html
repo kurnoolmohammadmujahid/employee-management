@@ -1,0 +1,154 @@
+<app-tab-menu [param]="hello" (sampleOutputMessage)="method($event)"></app-tab-menu>
+<app-loader *ngIf="loading"></app-loader>
+<div class="card card-bg">
+    <!-- {{printValue}} -->
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Address</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <th scope="row">{{product.id}}</th>
+                <td>{{product.name}}</td>
+                <td>{{product.age}}</td>
+                <td>{{product.mobileNo}}</td>
+                <td>{{product.address}}</td>
+                <td>
+                    <div style="display: flex;">
+                        <div>
+                            <button pButton type="button" label="Edit" (click)="showModalDialog(product)"
+                                class="p-button-success"></button>
+                            <!-- <p-button icon="pi pi-user-edit" (click)="showModalDialog(product)"
+                                styleClass="p-button-success"> </p-button> -->
+                        </div>
+                        <div style="margin-left: 5px;">
+                            <button pButton type="button" label="Delete" (click)="confirm(product.id)"
+                                class="p-button-danger"></button>
+                            <!-- <p-button icon="pi pi-user-minus" (click)="confirm(product.id)"
+                                styleClass="p-button-danger">
+                            </p-button> -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <p-table [value]="products">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Employee Id
+                </th>
+                <th>Name
+                </th>
+                <th>Age
+                </th>
+                <th>Mobile Number
+                </th>
+                <th>Address
+                </th>
+                <th>Actions
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.age}}</td>
+                <td>{{product.mobileNo}}</td>
+                <td>{{product.address}}</td>
+                <td>
+                    <div style="display: flex;">
+                        <div>
+                            <button pButton type="button" label="Edit" (click)="showModalDialog(product)"
+                                class="p-button-success"></button>
+                        </div>
+                        <div style="margin-left: 5px;">
+                            <button pButton type="button" label="Delete" (click)="confirm(product.id)"
+                                class="p-button-danger"></button>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table> -->
+    <!-- <p-overlayPanel #op [showCloseIcon]="true" [style]="{width:'700px'}">
+        <p-message *ngIf="success" class="margin" severity="success" text="Employee details updated succesfully">
+        </p-message>
+
+        <ng-template pTemplate>
+            <div class="p-fluid">
+                <div class="p-field">
+                    <label for="firstname1">Employee Id</label>
+                    <input id="firstname1" type="number" [(ngModel)]="id" disabled pInputText>
+                </div>
+                <div class="p-field">
+                    <label for="lastname1">Employee Name</label>
+                    <input id="lastname1" type="text" [(ngModel)]="name" pInputText>
+                </div>
+                <div class="p-field">
+                    <label for="lastname1">Employee Age</label>
+                    <input id="lastname1" type="text" [(ngModel)]="age" pInputText>
+                </div>
+                <div class="p-field">
+                    <label for="lastname1">Mobile Number</label>
+                    <input id="lastname1" type="tel" [(ngModel)]="mobileNo" pInputText>
+                </div>
+                <div class="p-field">
+                    <label for="lastname1">Address</label>
+                    <input id="lastname1" type="text" [(ngModel)]="address" pInputText>
+                </div>
+                <div style="align-self: center;" *ngIf="!success">
+                    <p-button label="Submit" (click)="editEmployee()"></p-button>
+                </div>
+            </div>
+        </ng-template>
+    </p-overlayPanel> -->
+</div>
+
+<!-- <p-confirmDialog #op2 [style]="{width: '50vw'}" key="positionDialog" [position]="position" [baseZIndex]="10000" rejectButtonStyleClass="p-button-outlined"></p-confirmDialog> -->
+
+<!-- <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text">
+</p-confirmDialog> -->
+
+<p-dialog header="Edit Employee Detail" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+    <p-message *ngIf="success" class="margin" severity="success" text="Employee details updated succesfully">
+    </p-message>
+    <div class="p-fluid">
+        <div class="p-field">
+            <label for="firstname1">Employee Id</label>
+            <input id="firstname1" type="number" [(ngModel)]="id" disabled pInputText>
+        </div>
+        <div class="p-field">
+            <label for="lastname1">Employee Name</label>
+            <input id="lastname1" type="text" [(ngModel)]="name" pInputText>
+        </div>
+        <div class="p-field">
+            <label for="lastname1">Employee Age</label>
+            <input id="lastname1" type="text" [(ngModel)]="age" pInputText>
+        </div>
+        <div class="p-field">
+            <label for="lastname1">Mobile Number</label>
+            <input id="lastname1" type="tel" [(ngModel)]="mobileNo" pInputText>
+        </div>
+        <div class="p-field">
+            <label for="lastname1">Address</label>
+            <input id="lastname1" type="text" [(ngModel)]="address" pInputText>
+        </div>
+        <div style="margin-top:10px" *ngIf="!success">
+            <p-button label="Submit" (click)="editEmployee()"></p-button>
+        </div>
+    </div>
+    <!-- <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Yes" class="p-button-text"></p-button>
+        <p-button icon="pi pi-times" (click)="displayModal=false" label="No"></p-button>
+    </ng-template> -->
+</p-dialog>
