@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+    font-family: cursive;
+    background-color: #17a2b8a3;;
+    padding: 0px 80px;
+}
+
+.main-header{
+    // height: 60px;
+    // padding: 7px;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    background-color: #465964;
+}
+
+.p-card-header img {
+    width: 100%;
+    height: 412px;
+}
+
+.spinner-class{
+  width: 100px;
+	height: 100px;
+  position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+}
+
+.card-bg{
+  background-color: aliceblue;
+}
+
+.p-inline-message {
+  display: flex !important;
+}
+
+.user-header {
+  height: 40px;
+  padding: 7px;
+  font-size: 1rem;
+  color: #0b7ad1;
+  background-color: #ffffff;
+}
+
+.p-component {
+  font-family: cursive;
+}
